@@ -1,0 +1,81 @@
+<div class="search-container background">
+  <header class="logo-section">
+    <h1 class="project-name">
+      <span class="letter t">T</span>
+      <span class="letter o">o</span>
+      <span class="letter u">u</span>
+      <span class="letter r">r</span>
+      <span class="letter g">G</span>
+      <span class="letter e">e</span>
+      <span class="letter n">n</span>
+      <span class="letter i">i</span>
+      <span class="letter e">e</span>
+    </h1>
+  </header>
+  
+  
+
+  <div *ngIf="!showResponse" class="row">
+    <main class="search-section">
+      <div class="search-input-group">
+        <input type="text" #destination placeholder="Where do you want to travel?" class="search-bar" />
+        <input type="text" #origin placeholder="Source of travel?" class="search-bar" />
+        <input type="text" #days placeholder="No of days?" class="search-bar" />
+      </div><br>
+      <!-- <button class="search-button" (click)="generateprompt(destination.value, origin.value, days.value)">Search</button> -->
+      <button (click)="generateprompt(destination.value, origin.value, days.value)">
+        <div class="svg-wrapper-1">
+          <div class="svg-wrapper">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path
+                fill="currentColor"
+                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <span>Let's go</span>
+        
+
+      </button>
+      <p *ngIf="errormessage" class="error-message" style="color: red;">{{ errormessage }}</p>
+      <div *ngIf="isLoading" class="loader"></div>
+    </main>
+  </div>
+  <!-- Response section -->
+    <div *ngIf="showResponse" class="row">
+      <main class="search-section">
+        
+        <div *ngIf="response" [innerHTML]="response" class="formatted-response"></div>
+        <button class="search-button" (click)="goBack()">Back</button>
+      </main>
+    </div>
+</div>
+
+
+
+<!-- <button (click)="generateprompt(destination.value, origin.value, days.value)">
+  <div class="svg-wrapper-1">
+    <div class="svg-wrapper">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+      >
+        <path fill="none" d="M0 0h24v24H0z"></path>
+        <path
+          fill="currentColor"
+          d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+  <span>Send</span>
+</button> -->

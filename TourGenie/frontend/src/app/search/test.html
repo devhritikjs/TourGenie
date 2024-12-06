@@ -1,0 +1,38 @@
+<div class="search-container">
+    <!-- Always show the logo -->
+    <header class="logo-section">
+      <h1 class="project-name">
+        <span class="letter t">T</span>
+        <span class="letter o">o</span>
+        <span class="letter u">u</span>
+        <span class="letter r">r</span>
+        <span class="letter g">G</span>
+        <span class="letter e">e</span>
+        <span class="letter n">n</span>
+        <span class="letter i">i</span>
+        <span class="letter e">e</span>
+      </h1>
+    </header>
+  
+    <!-- Input form section -->
+    <div *ngIf="!showResponse" class="row">
+      <main class="search-section">
+        <div class="search-input-group">
+          <input type="text" #destination placeholder="Where do you want to go?" class="search-bar" />
+          <input type="text" #origin placeholder="From where do you want to go?" class="search-bar" />
+          <input type="text" #days placeholder="No of days?" class="search-bar" />
+        </div>
+        <button class="search-button" (click)="generateprompt(destination.value, origin.value, days.value)">Send</button>
+      </main>
+    </div>
+  
+    <!-- Response section -->
+    <div *ngIf="showResponse" class="row">
+      <main class="search-section">
+        <div *ngIf="isLoading" class="loader"></div>
+        <div *ngIf="response" [innerHTML]="response" class="formatted-response"></div>
+        <button class="search-button" (click)="goBack()">Back</button>
+      </main>
+    </div>
+  </div>
+  

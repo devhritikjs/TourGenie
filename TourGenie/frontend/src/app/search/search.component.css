@@ -1,0 +1,280 @@
+
+/* From Uiverse.io by adamgiebl */ 
+button {
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+  transform: translateX(5em);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+/* logo  code */
+
+.logo-section {
+  text-align: center;
+  margin-top: -4px;
+}
+
+.project-name {
+  font-size: 10rem; /* Adjust size for bold effect */
+  font-family: 'Courier New', Courier, monospace; /* Typing style font */
+  font-weight: bold;
+  display: inline-block;
+}
+
+.letter {
+  display: inline-block;
+  animation: typing 4s steps(20, end), blink 0.5s step-end infinite alternate;
+}
+
+.letter.t {
+  color: #4285F4; /* Google blue */
+}
+
+.letter.o {
+  color: #EA4335; /* Google red */
+}
+
+.letter.u {
+  color: #FBBC05; /* Google yellow */
+}
+
+.letter.r {
+  color: #34A853; /* Google green */
+}
+
+.letter.g {
+  color: #4285F4; /* Google blue */
+}
+
+.letter.e {
+  color: #EA4335; /* Google red */
+}
+
+.letter.n {
+  color: #FBBC05; /* Google yellow */
+}
+
+.letter.i {
+  color: #34A853; /* Google green */
+}
+
+@keyframes typing {
+  0%, 100% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  from {
+    border-right-color: transparent;
+  }
+  to {
+    border-right-color: #333;
+  }
+}
+
+
+/* Container */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    position: relative;
+  z-index: 2;
+  }
+  
+  /* Logo Section */
+  .logo-section {
+    margin-bottom: 0rem;
+  }
+  
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+  }
+  
+  /* Search Section */
+  .search-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .search-bar {
+    width: 80%;
+    max-width: 500px;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    transition: 0.3s;
+  }
+  
+  .search-bar:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  }
+  
+  .search-button {
+    margin-top: 1rem;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .search-input-group {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    gap: 10px; /* Add spacing between inputs */
+  }
+  
+  .search-bar {
+    /* Add styles for input fields as needed */
+    width: 200px; /* Adjust width as required */
+  }
+  /* Adjusting the response container */
+  .formatted-response {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-height: 431px; /* Limit the height */
+    overflow-y: auto; /* Add scrolling for overflow content */
+    padding: 10px; /* Add padding for better spacing */
+    margin-top: 20px; /* Space from inputs/buttons */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border: 1px solid #ddd; /* Subtle border for separation */
+    border-radius: 10px; /* Rounded corners */
+    width: 90%; /* Adjust width to 90% of the parent container */
+    max-width: 1187px; /* Max width for larger screens */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add slight shadow */
+    color: #333; /* Text color */
+  }
+  
+
+/* Styling for headings in the response */
+.formatted-response h2 {
+  color: #4CAF50; /* Green for headings */
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Styling for bold text */
+.formatted-response strong {
+  color: #333;
+}
+
+/* Search section alignment */
+.search-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center elements vertically */
+}
+
+/* Adjusting spacing between response and loader */
+.loader {
+  margin-top: 20px;
+}
+
+
+  .loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .search-button {
+    margin-top: 20px;
+  }
+  
+  .formatted-response {
+    margin-top: 20px;
+  }
+ 
+  
+  
